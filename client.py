@@ -7,17 +7,16 @@ import cv2
 from skimage import io
 
 
-url = 'http://127.0.0.1:8000/predict'
-image_path = '1.jpg'
+url = 'http://127.0.0.1:5000/predict'
+image_path = '5.jpg'
 cfg0 = {
     'TRAIN': {'LR': 0.1},
     'BATCH_SIZE': 32
 }
-cfg = str(cfg0)
-
+cfg_str = str(cfg0)
 with open(image_path, 'rb') as f:
     image = f.read() # byte data
-payload = {'image': image, 'image_path': image_path, 'cfg': cfg}
+payload = {'image': image, 'image_path': image_path, 'cfg': cfg_str}
 r = requests.post(url, files=payload)
 b64_code = r.content
 print()

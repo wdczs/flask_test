@@ -49,4 +49,4 @@ def predict():
 if __name__ == '__main__':
     # saved_model_path = 'saved_model_path'
     # sess = load_model(saved_model_path)
-    app.run(port='8000')
+    app.run(port='5000')
